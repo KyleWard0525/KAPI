@@ -1,0 +1,1 @@
+g++ tests/test.cpp -o tests/test.exe -L. -lKWARD_API
