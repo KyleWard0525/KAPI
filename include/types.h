@@ -46,24 +46,29 @@
 #define TIME_CAST(x, domain) chrono::duration_cast<domain>(x).count()       //  Cast time value to milliseconds
 #define BYTES_TO_BITS(bytes) bytes * 8                                 // Convert bytes to bits
 
-//  Type definitions
-namespace types {
-    typedef std::chrono::steady_clock::time_point Time;                 //  Stores a point in time
-    typedef const char* cstr;                                           //  C string
-    typedef unsigned char byte;                                         //  Byte (8-bits)
+// Main API namespace wrapper
+namespace kward_api {
+    
+    //  Type definitions
+    namespace types {
+        typedef std::chrono::steady_clock::time_point Time;                 //  Stores a point in time
+        typedef const char* cstr;                                           //  C string
+        typedef unsigned char byte;                                         //  Byte (8-bits)
 
-    namespace times {
-        typedef std::chrono::nanoseconds ns;                            //  Nanoseconds
-        typedef std::chrono::microseconds us;                           //  Microseconds
-        typedef std::chrono::milliseconds ms;                           //  Milliseconds
-        typedef std::chrono::seconds seconds;                           //  Seconds
-        typedef std::chrono::minutes minutes;                           //  Minutes
-        typedef std::chrono::hours hours;                               //  Hours
+        namespace times {
+            typedef std::chrono::nanoseconds ns;                            //  Nanoseconds
+            typedef std::chrono::microseconds us;                           //  Microseconds
+            typedef std::chrono::milliseconds ms;                           //  Milliseconds
+            typedef std::chrono::seconds seconds;                           //  Seconds
+            typedef std::chrono::minutes minutes;                           //  Minutes
+            typedef std::chrono::hours hours;                               //  Hours
 
-        #define DAYS hours*24                                           //  Days
-        #define WEEKS DAYS*7                                            //  Weeks
-        #define MONTHS WEEKS*4                                          //  Months
-        #define YEARS MONTHS*12                                         //  Years
+            #define DAYS hours*24                                           //  Days
+            #define WEEKS DAYS*7                                            //  Weeks
+            #define MONTHS WEEKS*4                                          //  Months
+            #define YEARS MONTHS*12                                         //  Years
+        }
+
     }
 
 }
