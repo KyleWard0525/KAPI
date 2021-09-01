@@ -7,6 +7,7 @@
  * kward
  */
 #include "lib.h"
+#include "types.h"
 
 //  Ensure cross-compatibility with C
 #ifdef __cplusplus
@@ -21,43 +22,14 @@
 #endif
 
 using namespace std;
+using namespace kward_api::types;
 
 // Main DLL namespace
-namespace kward {
+namespace kward_api {
 
-    //  Remove blanks from vector of strings
-    vector<string> removeBlanks(vector<string> strVect)
-    {
-        //  Loop through vector
-        for (string str : strVect)
-        {
-            if (str == " ")
-            {
-                str = "";
-            }
-        }
-        return strVect;
-    }
-
-    //  Tokenize string with string delimeter
-    vector<string> tokenize(string str, string delim)
-    {
-        vector<string> tokens; //  Line tokens
-        size_t start = 0;      //  Start position
-        size_t end;            //  End position
-
-        //  Loop until delimeter is found or end of string
-        while ((end = str.find(delim, start)) != string::npos)
-        {
-            //  Add token to vector
-            string token = str.substr(start, end - start);
-            tokens.push_back(token);
-
-            start = end + delim.length();
-        }
-
-        return tokens;
-    }
+    vector<string> removeBlanks(vector<string> strVect);                    //  Remove blanks from vector of strings
+    vector<string> tokenize(string str, string delim);                      //  Tokenize string with string delimeter
+    void elapsed(Time start, cstr domain);                                  //  Measure elapsed time in a given time domain
 }
 
 #ifdef __cplusplus
