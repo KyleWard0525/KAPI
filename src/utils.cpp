@@ -1,4 +1,7 @@
 #include "../include/utils.h"
+#include "../include/types.h"
+
+using namespace kward_api::types;
 
 //  Remove blanks from vector of strings
 vector<string> kward_api::removeBlanks(vector<string> strVect)
@@ -35,28 +38,38 @@ vector<string> kward_api::tokenize(string str, string delim)
 }
 
 //  Measure elapsed time in a given time domain
-void kward_api::elapsed(Time start, cstr domain)
+void kward_api::elapsed(Time start, string domain)
 {
     //  Elapsed time
     long long elapsed;
 
     //  Check specified time domain
-    if(domain == "us")
+    if(domain == "ns")
+    {
+        //  Nanoseconds
+        elapsed = TIME_CAST(NOW - start, times::ns);
+        printf("\nElapsed time: %ldns", elapsed);
+    }
+    else if(domain == "us")
     {
         //  Microseconds
-        elapsed = chrono::duration_cast<chrono::microseconds>(NOW - start).count();
+        elapsed = TIME_CAST(NOW - start, times::us);
         printf("\nElapsed time: %ldus", elapsed);
     }
     else if(domain == "ms")
     {
         //  Milliseconds
-        elapsed = chrono::duration_cast<chrono::milliseconds>(NOW - start).count();
+        elapsed = TIME_CAST(NOW - start, times::ms);
         printf("\nElapsed time: %ldms", elapsed);
     }
     else if(domain == "s")
     {
         //  Seconds
-        elapsed = chrono::duration_cast<chrono::seconds>(NOW - start).count();
+        TIME_CAST(NOW - start, times::seconds);
         printf("\nElapsed time: %lds", elapsed);
+    }
+    else {
+        //  Unknown input
+        printf("\nError '%s' is not a recognized/supported domain type.\n", domain);
     }
 }
