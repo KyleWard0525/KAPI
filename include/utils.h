@@ -27,9 +27,9 @@ using namespace kward_api::types;
 // Main DLL namespace
 namespace kward_api {
 
-    vector<string> removeBlanks(vector<string> strVect);                    //  Remove blanks from vector of strings
-    vector<string> tokenize(string str, string delim);                      //  Tokenize string with string delimeter
-    void elapsed(Time start, cstr domain);                                  //  Measure elapsed time in a given time domain
+    KWARD_DLL vector<string> removeBlanks(vector<string> strVect);                    //  Remove blanks from vector of strings
+    KWARD_DLL vector<string> tokenize(string str, string delim);                      //  Tokenize string with string delimeter
+    KWARD_DLL void elapsed(Time start, string domain);                                  //  Measure elapsed time in a given time domain
 }
 
 #ifdef __cplusplus
