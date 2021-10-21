@@ -1,6 +1,6 @@
 :: Clear previous build/run
 del tests/test.exe
-del KWARD_API.dll
+del KAPI.dll
 
 :: Clear console
 cls
@@ -8,4 +8,4 @@ cls
 :: Start new run
 build.bat|more
 compile.bat|more
-cmd /k start tests/test.exe
+powershell start tests/test.exe
