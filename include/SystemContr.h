@@ -2,14 +2,14 @@
 #define SYSTEMCONTR_H
 
 /**
- * Handles all system operations
+ * Handles system operations
  * 
  * kward
  */
-#include "lib.h"
-#include "types.h"
+#include "kLib.h"
+#include "kTypes.h"
 
-using namespace types;
+using namespace kapi::types;
 
 //  Ensure cross-compatibility with C
 #ifdef __cplusplus
@@ -18,13 +18,13 @@ using namespace types;
 
 //  Include in DLL build
 #ifdef BUILD_DLL
-    #define KWARD_DLL __declspec(dllexport)
+    #define K_API __declspec(dllexport)
 #else
-    #define KWARD_DLL __declspec(dllimport)
+    #define K_API __declspec(dllimport)
 #endif
 
 // System IO
-class KWARD_DLL SystemIO 
+class K_API SystemIO 
 {
     private:
         
