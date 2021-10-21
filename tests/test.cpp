@@ -3,22 +3,25 @@
  * 
  * kward
  */
-#include "../include/KWARD_API.h"
+#include "../include/KAPI.h"
 
-using namespace types;
+using namespace kapi::types;
 
 int main()
 {
     // Execution start time
     Time start = NOW;
 
-    KWARD_API api = KWARD_API();
+    KAPI api = KAPI();
     api.test();
 
     printf("\nOS Type: %s", OS_TYPE);
+    kapi::elapsed(start, "us");
     printf("\nSize of %s: %d bits", "(type=Time)", BYTES_TO_BITS(sizeof(Time)));
-
-    printf("\nElapsed time: %.6fns", TIME_CAST(NOW - start, times::ns));
     
     printf("\n");
+
+    printf("\nThere are %d seconds in a year!", YEARS);
+
+    getchar();
 }
