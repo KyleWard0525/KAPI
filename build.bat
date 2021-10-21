@@ -1,1 +1,1 @@
-g++ -D BUILD_DLL -shared src/KWARD_API.cpp src/utils.cpp -o KWARD_API.dll
+g++ -D BUILD_DLL -shared src/KAPI.cpp src/kUtils.cpp -o KAPI.dll
