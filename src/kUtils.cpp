@@ -73,3 +73,12 @@ void kapi::elapsed(Time start, string domain)
         printf("\nError '%s' is not a recognized/supported domain type.\n", domain);
     }
 }
+
+// Vector to int pointer
+void kapi::vtoi(const vector<int> vect, int* arr)
+{
+  for(int i = 0; i < vect.size() - 1; i++)
+  {
+    arr[i] = vect.at(i);
+  }
+}
