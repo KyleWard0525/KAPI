@@ -33,7 +33,8 @@ namespace kapi {
 
     K_API vector<string> removeBlanks(vector<string> strVect);                    //  Remove blanks from vector of strings
     K_API vector<string> tokenize(string str, string delim);                      //  Tokenize string with string delimeter
-    K_API void elapsed(Time start, string domain);                                  //  Measure elapsed time in a given time domain
+    K_API void elapsed(Time start, string domain);                                //  Measure elapsed time in a given time domain
+    K_API void vtoi(const vector<int> vect, int* arr);                            //  Cast a vector to and int pointer
 }
 
 
