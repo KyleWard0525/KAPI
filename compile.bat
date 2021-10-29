@@ -1,1 +1,0 @@
-g++ tests/test.cpp -o tests/test.exe -L. -lKAPI

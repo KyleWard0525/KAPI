@@ -1,11 +1,43 @@
+@echo OFF
+
 :: Clear previous build/run
-del tests/test.exe
-del KAPI.dll
+if exist "tests\test.exe" (
+    del "tests\test.exe"
+)
+if exist KAPI.dll (
+    del KAPI.dll
+)
 
-:: Clear console
-cls
+:: Build DLL
+g++ -D BUILD_DLL -shared src/KAPI.cpp src/kUtils.cpp -o KAPI.dll
 
-:: Start new run
-build.bat|more
-compile.bat|more
-powershell start tests/test.exe
+:: Check if DLL was created
+if exist KAPI.dll (
+    echo.
+    echo DLL BUILD SUCCESSFUL
+    echo.
+
+    :: Compile program
+    g++ tests/test.cpp -o tests/test.exe -L. -lKAPI
+
+    :: Check if exe was created
+    if exist "tests\test.exe" (
+        echo.
+        echo COMPILATION SUCCESSFUL
+        echo.
+
+        :: Run program 
+        start /w /b tests/test.exe
+
+    ) else (
+        echo.
+        echo COMPILATION FAILED
+        echo.
+        exit
+    )
+) else (
+    echo.
+    echo DLL BUILD FAILED
+    echo.
+    exit
+)
