@@ -82,3 +82,24 @@ void kapi::vtoi(const vector<int> vect, int* arr)
     arr[i] = vect.at(i);
   }
 }
+
+// Print any type of array
+template<typename T>
+void printArr(const T &arr, int len)
+{
+    cout << "{";
+
+    // Loop through array
+    for(int i = 0; i < len; i++)
+    {
+        if(i < len - 1)
+        {
+            cout << arr[i] << ", ";
+        }
+        else {
+            cout << arr[i];
+        }
+    }
+
+    cout << "}" << endl;
+}
