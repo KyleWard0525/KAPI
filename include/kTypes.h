@@ -25,7 +25,8 @@
 
 // Macros
 #define NOW std::chrono::steady_clock::now()                    //  Gets the current point in time
-#define C 299792458                                             //  Speed of light in a vaccum (m/s)
+#define LIGHTSPEED 299792458                                    //  Speed of light in a vaccum (m/s)
+
 
 // OS Type and OS-dependent includes
 #if defined(_WIN32) || defined(_WIN64)
