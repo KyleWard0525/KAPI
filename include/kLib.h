@@ -19,7 +19,6 @@
 #include <stdio.h>                  //  printf and fopen
 #include <fstream>                  //  File IO
 #include <chrono>                   //  Timing
-#include <Windows.h>                //  system()
 #include <iomanip>                  //  IO manipulation (ex. setprecision)
 #include <sys/stat.h>               //  OS information gathering
 #include <map>                      //  For mapping data
