@@ -8,6 +8,7 @@
  */
 
 #include "kLib.h"
+#include "kDebug.h"
 #include "kTypes.h"
 #include "kUtils.h"
 
