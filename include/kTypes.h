@@ -30,6 +30,7 @@
 // OS Type and OS-dependent includes
 #if defined(_WIN32) || defined(_WIN64)
     #define OS_TYPE "Windows"
+    #include <Windows.h>                //  system()
 
 #elif defined(unix) || defined(__unix) || defined(__unix__)
     #define OS_TYPE "Unix"
